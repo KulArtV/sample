@@ -6,7 +6,7 @@ install:
   - ls -a
   - cd ..
   - ls -a
-  - cp vector.h base_testing
+  - sudo cp vector.h base_testing
   - sudo apt-get install -y cmake
   - sudo apt-get install -y libgtest-dev
   - mkdir build_gtest
