@@ -220,4 +220,4 @@ bool operator>=(const Vector<T>& lhs, const Vector<T>& rhs) {
 	return !(lhs < rhs);
 }
 
-#endif // VECTOR_H
+#endif
