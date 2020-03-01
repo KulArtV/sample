@@ -1,7 +1,7 @@
 language: cpp
 
 install:
-  - sudo git clone https://github.com/KulArtV/base_testing
+  - sudo git clone https://github.com/KulArtV/base_testing -b vector_test
   - cd base_testing
   - ls -a
   - cd ..
