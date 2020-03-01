@@ -1,7 +1,7 @@
 #ifndef VECTOR_H
 #define VECTOR_H
 
-#include <cstddef>
+#include <iostream>
 
 template <class T>
 T* Copy(const T* src_begin, const T* src_end, T* dest) {
