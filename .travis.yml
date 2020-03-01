@@ -7,11 +7,11 @@ install:
   - cd ..
   - ls -a
   - sudo cp vector.h base_testing
-  - sudo cd base_testing
+  - cd base_testing
   - sudo apt-get install -y cmake
   - sudo apt-get install -y libgtest-dev
   - sudo mkdir build_gtest
-  - sudo cd build_gtest
+  - cd build_gtest
   - sudo cmake /usr/src/gtest
   - sudo make
   - sudo cp libgtest* /usr/lib
@@ -24,6 +24,6 @@ script:
   - sudo cmake ..
   - sudo make
   - sudo ./Test
-  - sudo cd CMakeFiles/Test.dir
+  - cd CMakeFiles/Test.dir
   - cd ..
   - cd ..
