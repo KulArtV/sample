@@ -23,7 +23,7 @@ script:
   - cd build
   - sudo cmake ..
   - sudo make
-  - ./Test
-  - cd CMakeFiles/Test.dir
-  - cd ..
-  - cd ..
+  - ./TestVector
+ #- cd CMakeFiles/TestVector.dir
+ #- cd ..
+ #- cd ..
