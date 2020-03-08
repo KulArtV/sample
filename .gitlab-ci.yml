@@ -1,0 +1,47 @@
+image: amardikian/clang-3.8
+
+
+stages:
+    - build
+    - test
+
+before_script:
+    - apt-get update -y
+    - apt-get install -y cmake
+    - apt-get install -y libgtest-dev
+    - apt-get install -y valgrind
+    - mkdir build_gtest
+    - cd build_gtest
+    - cmake /usr/src/gtest
+    - make
+    - cp libgtest* /usr/lib
+    - cd ..
+
+build:
+    stage: build
+    script: 
+        - git clone https://"$TESTING_TOKEN"@github.com/KulArtV/base_testing -b "$CI_COMMIT_BRANCH"
+        - ls -a
+        - cp vector.h base_testing
+        - cd base_testing
+        - ls -a
+        - mkdir build
+        - cd build
+        - cmake ..
+        - make
+    artifacts:
+        paths:
+            - base_testing/
+        expire_in: 1 week
+        
+test:
+    stage: test
+    script:
+        - cd base_testing
+        - cp valgrind_parser.py build
+        - cd build
+        - valgrind --leak-check=yes --log-file=log.txt ./TestVector
+        - python valgrind_parser.py
+        - echo "Great job!!"
+    dependencies: 
+        - build
