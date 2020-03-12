@@ -37,7 +37,7 @@ test:
         - cd base_testing
         - cp valgrind_parser.py build
         - cd build
-        - valgrind --leak-check=yes --log-file=log.txt ./TestDeque
+        - valgrind --leak-check=yes --log-file=log.txt ./Test
         - python valgrind_parser.py
         - echo "Great job!!"
     dependencies: 
